@@ -1,0 +1,105 @@
+*{
+  border: 0px, 0px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+ font:Georgia, serif;
+}
+
+
+
+
+
+
+
+
+#maintext {
+  text-align:center;
+  font-size:22px
+}
+
+
+
+
+
+
+
+
+#Quran {
+  text-align:center;
+ 
+}
+
+
+
+
+#HandDiv img{
+ width:180px;
+  height:180px;
+   
+}
+
+
+
+
+#HandDiv {
+font-size:18px;
+}
+
+
+#handAmount {
+ float: left;
+border:20px, 20px;
+}
+
+
+
+
+#HelperDiv img{
+  width:180px;
+   height:130px;
+   
+}
+
+
+#HelperDiv {
+font-size:18px;
+}
+
+
+
+
+#helperAmount {
+float: left;
+border:20px, 20px;
+}
+
+
+#ppDiv {
+font-size:18px;
+}
+
+
+#ppDiv img{
+width:120px;
+   height:180px;
+}
+
+
+
+
+#ppAmount {
+float: left;
+border:20px, 20px;
+}
+
+
+
+
+
+
+
+
+#gamble {
+text-align:center;
+padding: 50px;
+}
