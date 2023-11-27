@@ -1,15 +1,92 @@
 <!DOCTYPE html>
- <head> 
-    <title>Bouncing Box</title>
 
-    <link rel="stylesheet" href="BB.css">
-    <link rel="javascript" href="BB.js">
- </head>
+<head>
+   <title>Bouncing Box</title>
 
- <body>
-    <div id="box">
+   <link rel="stylesheet" href="BB.css">
+   <link rel="javascript" href="BB.js">
+</head>
 
-        
+<body id="body">
+   <div id="box">
 
-    </div>
- </body>
+
+
+   </div>
+</body>
+<script>
+   var x = 0
+   var y = 0
+   var xBoundary = 1800
+   var yBoundary = 920
+   var intervalIDX
+   var intervalIDY
+   document.getElementById("box").addEventListener("click", bounce)
+   // setInterval(darouseBounce,0)
+
+   function darouseBounce() {
+      var newElement = document.createElement("div")
+      newElement.classList.add("boxes")
+      var ranX = Math.random() * xBoundary
+      var ranY = Math.random() * yBoundary
+      newElement.style.top = ranY + "px"
+      newElement.style.left = ranX + "px"
+      // newElement.style.backgroundColor = "hsl(" + Math.random() * 360 + ", 100%, 50%)"
+      newElement.style.backgroundColor = "hsl(" + (ranX / xBoundary) * 360 + ", 100%, 50%)"
+
+
+      document.getElementById("body").appendChild(newElement)
+
+   }
+
+   function bounce() {
+      setInterval(movein, 10)
+      intervalIDX = setInterval(right1, 1)
+      intervalIDY = setInterval(down1, 1)
+   }
+
+   function testclick() {
+      document.getElementById("box").style.top = x + "px";
+      document.getElementById("box").style.left = y + "px";
+   }
+
+   function movein() {
+      if (x >= xBoundary) {
+         clearInterval(intervalIDX);
+         intervalIDX = setInterval(left1, 1)
+      } 
+       if (y >= yBoundary) {
+         clearInterval(intervalIDY);
+         intervalIDY = setInterval(up1, 1)
+      } 
+       if (x <= 0) {
+         clearInterval(intervalIDX);
+         intervalIDX = setInterval(right1, 1)
+      } 
+       if (y <= 0) {
+         clearInterval(intervalIDY);
+         intervalIDY = setInterval(down1, 1)
+      }
+   }
+
+   function down1() {
+      y = y + 1
+      document.getElementById("box").style.top = y + "px";
+      document.getElementById("box").style.left = x + "px";
+   }
+   function left1() {
+      x = x - 1
+      document.getElementById("box").style.top = y + "px";
+      document.getElementById("box").style.left = x + "px";
+   }
+   function up1() {
+      y = y - 1
+      document.getElementById("box").style.top = y + "px";
+      document.getElementById("box").style.left = x + "px";
+   }
+   function right1() {
+      x = x + 1
+      document.getElementById("box").style.top = y + "px";
+      document.getElementById("box").style.left = x + "px";
+   }
+</script>
